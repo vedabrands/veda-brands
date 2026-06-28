@@ -10,8 +10,18 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as UserLoginRouteImport } from './routes/user-login'
+import { Route as ServicesRouteImport } from './routes/services'
+import { Route as ReviewsRouteImport } from './routes/reviews'
+import { Route as PricingRouteImport } from './routes/pricing'
+import { Route as PortfolioRouteImport } from './routes/portfolio'
+import { Route as HomeRouteImport } from './routes/home'
 import { Route as GuestRouteImport } from './routes/guest'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as ConnectRouteImport } from './routes/connect'
+import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AdminLoginRouteImport } from './routes/admin-login'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
 const UserLoginRoute = UserLoginRouteImport.update({
@@ -19,14 +29,64 @@ const UserLoginRoute = UserLoginRouteImport.update({
   path: '/user-login',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicesRoute = ServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReviewsRoute = ReviewsRouteImport.update({
+  id: '/reviews',
+  path: '/reviews',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PricingRoute = PricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PortfolioRoute = PortfolioRouteImport.update({
+  id: '/portfolio',
+  path: '/portfolio',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HomeRoute = HomeRouteImport.update({
+  id: '/home',
+  path: '/home',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const GuestRoute = GuestRouteImport.update({
   id: '/guest',
   path: '/guest',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConnectRoute = ConnectRouteImport.update({
+  id: '/connect',
+  path: '/connect',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogRoute = BlogRouteImport.update({
+  id: '/blog',
+  path: '/blog',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdminLoginRoute = AdminLoginRouteImport.update({
   id: '/admin-login',
   path: '/admin-login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -37,35 +97,118 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/admin-login': typeof AdminLoginRoute
+  '/blog': typeof BlogRoute
+  '/connect': typeof ConnectRoute
+  '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
   '/guest': typeof GuestRoute
+  '/home': typeof HomeRoute
+  '/portfolio': typeof PortfolioRoute
+  '/pricing': typeof PricingRoute
+  '/reviews': typeof ReviewsRoute
+  '/services': typeof ServicesRoute
   '/user-login': typeof UserLoginRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/admin-login': typeof AdminLoginRoute
+  '/blog': typeof BlogRoute
+  '/connect': typeof ConnectRoute
+  '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
   '/guest': typeof GuestRoute
+  '/home': typeof HomeRoute
+  '/portfolio': typeof PortfolioRoute
+  '/pricing': typeof PricingRoute
+  '/reviews': typeof ReviewsRoute
+  '/services': typeof ServicesRoute
   '/user-login': typeof UserLoginRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/admin-login': typeof AdminLoginRoute
+  '/blog': typeof BlogRoute
+  '/connect': typeof ConnectRoute
+  '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
   '/guest': typeof GuestRoute
+  '/home': typeof HomeRoute
+  '/portfolio': typeof PortfolioRoute
+  '/pricing': typeof PricingRoute
+  '/reviews': typeof ReviewsRoute
+  '/services': typeof ServicesRoute
   '/user-login': typeof UserLoginRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/admin-login' | '/guest' | '/user-login'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/admin-login'
+    | '/blog'
+    | '/connect'
+    | '/contact'
+    | '/faq'
+    | '/guest'
+    | '/home'
+    | '/portfolio'
+    | '/pricing'
+    | '/reviews'
+    | '/services'
+    | '/user-login'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/admin-login' | '/guest' | '/user-login'
-  id: '__root__' | '/' | '/admin-login' | '/guest' | '/user-login'
+  to:
+    | '/'
+    | '/about'
+    | '/admin-login'
+    | '/blog'
+    | '/connect'
+    | '/contact'
+    | '/faq'
+    | '/guest'
+    | '/home'
+    | '/portfolio'
+    | '/pricing'
+    | '/reviews'
+    | '/services'
+    | '/user-login'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/admin-login'
+    | '/blog'
+    | '/connect'
+    | '/contact'
+    | '/faq'
+    | '/guest'
+    | '/home'
+    | '/portfolio'
+    | '/pricing'
+    | '/reviews'
+    | '/services'
+    | '/user-login'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
   AdminLoginRoute: typeof AdminLoginRoute
+  BlogRoute: typeof BlogRoute
+  ConnectRoute: typeof ConnectRoute
+  ContactRoute: typeof ContactRoute
+  FaqRoute: typeof FaqRoute
   GuestRoute: typeof GuestRoute
+  HomeRoute: typeof HomeRoute
+  PortfolioRoute: typeof PortfolioRoute
+  PricingRoute: typeof PricingRoute
+  ReviewsRoute: typeof ReviewsRoute
+  ServicesRoute: typeof ServicesRoute
   UserLoginRoute: typeof UserLoginRoute
 }
 
@@ -78,6 +221,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof UserLoginRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reviews': {
+      id: '/reviews'
+      path: '/reviews'
+      fullPath: '/reviews'
+      preLoaderRoute: typeof ReviewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pricing': {
+      id: '/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof PricingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/portfolio': {
+      id: '/portfolio'
+      path: '/portfolio'
+      fullPath: '/portfolio'
+      preLoaderRoute: typeof PortfolioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/home': {
+      id: '/home'
+      path: '/home'
+      fullPath: '/home'
+      preLoaderRoute: typeof HomeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/guest': {
       id: '/guest'
       path: '/guest'
@@ -85,11 +263,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GuestRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/connect': {
+      id: '/connect'
+      path: '/connect'
+      fullPath: '/connect'
+      preLoaderRoute: typeof ConnectRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog': {
+      id: '/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof BlogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/admin-login': {
       id: '/admin-login'
       path: '/admin-login'
       fullPath: '/admin-login'
       preLoaderRoute: typeof AdminLoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -104,8 +317,18 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
   AdminLoginRoute: AdminLoginRoute,
+  BlogRoute: BlogRoute,
+  ConnectRoute: ConnectRoute,
+  ContactRoute: ContactRoute,
+  FaqRoute: FaqRoute,
   GuestRoute: GuestRoute,
+  HomeRoute: HomeRoute,
+  PortfolioRoute: PortfolioRoute,
+  PricingRoute: PricingRoute,
+  ReviewsRoute: ReviewsRoute,
+  ServicesRoute: ServicesRoute,
   UserLoginRoute: UserLoginRoute,
 }
 export const routeTree = rootRouteImport
