@@ -264,7 +264,7 @@ function SettingsManager() {
   async function save(key: string) {
     const raw = drafts[key];
     if (raw == null) return;
-    let value: unknown;
+    let value: any;
     try {
       value = JSON.parse(raw);
     } catch {
