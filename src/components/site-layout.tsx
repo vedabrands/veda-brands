@@ -17,7 +17,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
               <span className="font-display text-lg text-gradient">V</span>
             </span>
             <span className="font-display text-xl tracking-tight text-ink">
-              Vedbrands
+              Veda Brands
             </span>
           </Link>
           <div className="flex items-center gap-2">
@@ -46,7 +46,7 @@ function SiteFooter() {
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6">
         <div className="grid grid-cols-2 gap-10 md:grid-cols-4">
           <div>
-            <h4 className="font-display text-xl text-ink">Vedbrands</h4>
+            <h4 className="font-display text-xl text-ink">Veda Brands</h4>
             <p className="mt-2 text-sm text-muted-ink">
               A modern branding studio for ambitious companies.
             </p>
@@ -68,7 +68,7 @@ function SiteFooter() {
           ]} />
         </div>
         <div className="mt-10 flex flex-col items-start justify-between gap-4 border-t border-white/40 pt-6 text-xs text-muted-ink sm:flex-row sm:items-center">
-          <p>© {new Date().getFullYear()} Vedbrands. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Veda Brands. All rights reserved.</p>
           <div className="flex gap-4">
             <a href="#" className="hover:text-ink transition">Privacy</a>
             <a href="#" className="hover:text-ink transition">Terms</a>

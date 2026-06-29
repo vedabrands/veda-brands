@@ -8,8 +8,8 @@ import { Quote, Star } from "lucide-react";
 export const Route = createFileRoute("/reviews")({
   head: () => ({
     meta: [
-      { title: "Reviews — Vedbrands" },
-      { name: "description", content: "What founders and marketing leaders say about working with Vedbrands." },
+      { title: "Reviews — Veda Brands" },
+      { name: "description", content: "What founders and marketing leaders say about working with Veda Brands." },
       { property: "og:url", content: "/reviews" },
     ],
     links: [{ rel: "canonical", href: "/reviews" }],

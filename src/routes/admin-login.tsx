@@ -9,7 +9,7 @@ import { z } from "zod";
 export const Route = createFileRoute("/admin-login")({
   head: () => ({
     meta: [
-      { title: "Admin Login — Vedbrands" },
+      { title: "Admin Login — Veda Brands" },
       { name: "robots", content: "noindex,nofollow" },
     ],
   }),
@@ -96,7 +96,7 @@ function AdminLogin() {
           </div>
           <h1 className="mt-5 font-display text-3xl text-ink">Admin {mode === "login" ? "Sign in" : "Create account"}</h1>
           <p className="mt-1 text-sm text-muted-ink">
-            {mode === "login" ? "Access the Vedbrands content dashboard." : "Bootstrap the first admin or create another admin account."}
+            {mode === "login" ? "Access the Veda Brands content dashboard." : "Bootstrap the first admin or create another admin account."}
           </p>
           <form onSubmit={onSubmit} className="mt-6 space-y-3">
             <Field label="Email">

@@ -8,7 +8,7 @@ import { z } from "zod";
 
 export const Route = createFileRoute("/user-login")({
   head: () => ({
-    meta: [{ title: "Sign in — Vedbrands" }],
+    meta: [{ title: "Sign in — Veda Brands" }],
   }),
   component: UserLogin,
 });

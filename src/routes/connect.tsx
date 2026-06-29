@@ -8,8 +8,8 @@ import { supabase } from "@/integrations/supabase/client";
 export const Route = createFileRoute("/connect")({
   head: () => ({
     meta: [
-      { title: "Connect — Vedbrands" },
-      { name: "description", content: "Call, email, WhatsApp or visit Vedbrands." },
+      { title: "Connect — Veda Brands" },
+      { name: "description", content: "Call, email, WhatsApp or visit Veda Brands." },
       { property: "og:url", content: "/connect" },
     ],
     links: [{ rel: "canonical", href: "/connect" }],

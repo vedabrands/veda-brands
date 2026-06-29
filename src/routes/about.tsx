@@ -5,8 +5,8 @@ import { SectionHeading } from "./home";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Vedbrands" },
-      { name: "description", content: "Vedbrands is a small senior-led branding studio working with ambitious teams worldwide." },
+      { title: "About — Veda Brands" },
+      { name: "description", content: "Veda Brands is a small senior-led branding studio working with ambitious teams worldwide." },
       { property: "og:url", content: "/about" },
     ],
     links: [{ rel: "canonical", href: "/about" }],
@@ -21,7 +21,7 @@ const values = [
 ];
 
 const timeline = [
-  { y: "2021", t: "Vedbrands founded" },
+  { y: "2021", t: "Veda Brands founded" },
   { y: "2022", t: "First international clients" },
   { y: "2023", t: "Crossed 100 projects" },
   { y: "2024", t: "Senior-led team of 12" },
@@ -34,7 +34,7 @@ function About() {
       <section className="mx-auto max-w-7xl px-4 pt-10 sm:px-6 sm:pt-16">
         <SectionHeading eyebrow="About" title="A senior-led studio for ambitious companies." />
         <p className="mt-5 max-w-2xl text-base text-muted-ink sm:text-lg">
-          Vedbrands is a tight team of strategists, designers and marketers. We help founders, marketing leaders and operators build brands that earn attention and convert it into revenue.
+          Veda Brands is a tight team of strategists, designers and marketers. We help founders, marketing leaders and operators build brands that earn attention and convert it into revenue.
         </p>
       </section>
 

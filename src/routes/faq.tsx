@@ -6,8 +6,8 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 export const Route = createFileRoute("/faq")({
   head: () => ({
     meta: [
-      { title: "FAQs — Vedbrands" },
-      { name: "description", content: "Common questions about working with Vedbrands." },
+      { title: "FAQs — Veda Brands" },
+      { name: "description", content: "Common questions about working with Veda Brands." },
       { property: "og:url", content: "/faq" },
     ],
     links: [{ rel: "canonical", href: "/faq" }],

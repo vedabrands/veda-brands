@@ -53,7 +53,7 @@ export function MobileNav() {
       </SheetTrigger>
       <SheetContent side="right" className="glass-strong border-glass-border w-[88vw] sm:w-96 p-0">
         <SheetHeader className="px-6 pt-6 pb-2">
-          <SheetTitle className="font-display text-2xl">Vedbrands</SheetTitle>
+          <SheetTitle className="font-display text-2xl">Veda Brands</SheetTitle>
           {(user || guestName) && (
             <p className="text-xs text-muted-ink">
               Welcome, {user ? (user.user_metadata?.name as string) ?? user.email : guestName}

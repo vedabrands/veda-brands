@@ -10,7 +10,7 @@ export interface AuthState {
   guestName: string | null;
 }
 
-const GUEST_KEY = "vedbrands:guest_name";
+const GUEST_KEY = "veda-brands:guest_name";
 
 export function getGuestName(): string | null {
   if (typeof window === "undefined") return null;
