@@ -82,7 +82,7 @@ function UserLogin() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 className="h-12 w-full rounded-2xl glass px-4 text-ink focus:outline-none focus:ring-2 focus:ring-[color:var(--accent-blue)]/40"
-                placeholder="Aarav Mehta"
+                placeholder="Your full name"
                 required
               />
             </Field>
