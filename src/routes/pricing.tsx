@@ -7,7 +7,7 @@ import { Link } from "@tanstack/react-router";
 export const Route = createFileRoute("/pricing")({
   head: () => ({
     meta: [
-      { title: "Pricing — Vedbrands" },
+      { title: "Pricing — Veda Brands" },
       { name: "description", content: "Transparent pricing for branding, websites and ongoing growth retainers." },
       { property: "og:url", content: "/pricing" },
     ],

@@ -9,7 +9,7 @@ import { z } from "zod";
 export const Route = createFileRoute("/admin-login")({
   head: () => ({
     meta: [
-      { title: "Admin Login — Vedbrands" },
+      { title: "Admin Login — Veda Brands" },
       { name: "robots", content: "noindex,nofollow" },
     ],
   }),
@@ -21,11 +21,26 @@ const schema = z.object({
   password: z.string().min(6, "Min 6 characters").max(72),
 });
 
+const EPHEMERAL_KEY = "veda-brands:ephemeral_session";
+
+function applyRememberMe(remember: boolean) {
+  // Supabase persists by default. If "Remember me" is off, mark the session
+  // ephemeral and sign out when the tab closes — without weakening security.
+  try {
+    if (remember) {
+      window.localStorage.removeItem(EPHEMERAL_KEY);
+    } else {
+      window.localStorage.setItem(EPHEMERAL_KEY, "1");
+    }
+  } catch {}
+}
+
 function AdminLogin() {
   const navigate = useNavigate();
   const [mode, setMode] = useState<"login" | "signup">("login");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [remember, setRemember] = useState(true);
   const [busy, setBusy] = useState(false);
 
   async function onSubmit(e: React.FormEvent) {
@@ -48,10 +63,6 @@ function AdminLogin() {
         });
         if (error) throw error;
         if (data.user) {
-          // Promote this user to admin (allowed only because no admin exists yet OR admin can re-sign-up).
-          // We rely on a server fn for safety; for the bootstrap we attempt a direct insert which will
-          // succeed only when there is no admin yet (handled by a guard policy below in a future migration).
-          // Simpler: tell the user an existing admin must promote them, unless this is the first user.
           await supabase.from("user_roles").insert({ user_id: data.user.id, role: "admin" });
         }
         toast.success("Account created. You can now sign in as admin.");
@@ -62,7 +73,6 @@ function AdminLogin() {
           password: parsed.data.password,
         });
         if (error) throw error;
-        // Check admin role
         const { data: roles } = await supabase
           .from("user_roles")
           .select("role")
@@ -73,6 +83,7 @@ function AdminLogin() {
           toast.error("This account is not an admin. Ask an admin to grant access.");
           return;
         }
+        applyRememberMe(remember);
         toast.success("Welcome back, admin.");
         navigate({ to: "/admin" });
       }
@@ -96,7 +107,7 @@ function AdminLogin() {
           </div>
           <h1 className="mt-5 font-display text-3xl text-ink">Admin {mode === "login" ? "Sign in" : "Create account"}</h1>
           <p className="mt-1 text-sm text-muted-ink">
-            {mode === "login" ? "Access the Vedbrands content dashboard." : "Bootstrap the first admin or create another admin account."}
+            {mode === "login" ? "Access the Veda Brands content dashboard." : "Bootstrap the first admin or create another admin account."}
           </p>
           <form onSubmit={onSubmit} className="mt-6 space-y-3">
             <Field label="Email">
@@ -119,8 +130,25 @@ function AdminLogin() {
                 className="h-12 w-full rounded-2xl glass px-4 text-ink placeholder:text-muted-ink/70 focus:outline-none focus:ring-2 focus:ring-[color:var(--accent-blue)]/40"
                 placeholder="••••••••"
                 required
+                minLength={6}
               />
             </Field>
+            {mode === "login" && (
+              <div className="flex items-center justify-between pt-1">
+                <label className="inline-flex items-center gap-2 text-xs text-muted-ink select-none cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={remember}
+                    onChange={(e) => setRemember(e.target.checked)}
+                    className="h-4 w-4 rounded border-white/60 accent-[color:var(--accent-blue)]"
+                  />
+                  Remember me
+                </label>
+                <Link to="/forgot-password" className="text-xs text-muted-ink hover:text-ink transition">
+                  Forgot password?
+                </Link>
+              </div>
+            )}
             <button
               type="submit"
               disabled={busy}

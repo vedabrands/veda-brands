@@ -9,8 +9,8 @@ import { z } from "zod";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Vedbrands" },
-      { name: "description", content: "Get in touch with the Vedbrands team." },
+      { title: "Contact — Veda Brands" },
+      { name: "description", content: "Get in touch with the Veda Brands team." },
       { property: "og:url", content: "/contact" },
     ],
     links: [{ rel: "canonical", href: "/contact" }],

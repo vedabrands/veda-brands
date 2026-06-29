@@ -12,9 +12,9 @@ import {
 export const Route = createFileRoute("/home")({
   head: () => ({
     meta: [
-      { title: "Vedbrands — We Build Brands That People Remember" },
+      { title: "Veda Brands — We Build Brands That People Remember" },
       { name: "description", content: "Brand strategy, web design, SEO, and social media marketing. Premium results for ambitious companies." },
-      { property: "og:title", content: "Vedbrands — Premium branding agency" },
+      { property: "og:title", content: "Veda Brands — Premium branding agency" },
       { property: "og:url", content: "/home" },
     ],
     links: [{ rel: "canonical", href: "/home" }],
@@ -141,7 +141,7 @@ const why = [
 function WhyUs() {
   return (
     <section className="mx-auto mt-20 max-w-7xl px-4 sm:mt-28 sm:px-6">
-      <SectionHeading eyebrow="Why Vedbrands" title="Built for companies that want to feel premium." />
+      <SectionHeading eyebrow="Why Veda Brands" title="Built for companies that want to feel premium." />
       <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-3">
         {why.map((w) => (
           <div key={w.title} className="rounded-3xl glass p-7">

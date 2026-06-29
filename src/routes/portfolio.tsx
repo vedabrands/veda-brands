@@ -5,7 +5,7 @@ import { SectionHeading } from "./home";
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
     meta: [
-      { title: "Portfolio — Vedbrands" },
+      { title: "Portfolio — Veda Brands" },
       { name: "description", content: "Selected work across brand identity, websites, and growth campaigns." },
       { property: "og:url", content: "/portfolio" },
     ],

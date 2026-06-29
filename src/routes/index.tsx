@@ -7,8 +7,8 @@ import { useAuth } from "@/lib/use-auth";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Vedbrands — Welcome" },
-      { name: "description", content: "Enter Vedbrands as Admin, User, or Guest." },
+      { title: "Veda Brands — Welcome" },
+      { name: "description", content: "Enter Veda Brands as Admin, User, or Guest." },
     ],
   }),
   component: EntryGate,
@@ -59,7 +59,7 @@ function EntryGate() {
             A branding studio for ambitious companies
           </div>
           <h1 className="mt-6 font-display text-5xl leading-[1.05] tracking-tight text-ink sm:text-6xl md:text-7xl">
-            Welcome to <span className="ink-gradient">Vedbrands</span>
+            Welcome to <span className="ink-gradient">Veda Brands</span>
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-base text-muted-ink sm:text-lg">
             Choose how you'd like to enter.

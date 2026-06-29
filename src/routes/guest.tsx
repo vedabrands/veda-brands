@@ -8,7 +8,7 @@ import { toast } from "sonner";
 import { z } from "zod";
 
 export const Route = createFileRoute("/guest")({
-  head: () => ({ meta: [{ title: "Continue as Guest — Vedbrands" }] }),
+  head: () => ({ meta: [{ title: "Continue as Guest — Veda Brands" }] }),
   component: GuestEntry,
 });
 

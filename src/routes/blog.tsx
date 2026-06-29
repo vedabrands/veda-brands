@@ -5,8 +5,8 @@ import { SectionHeading } from "./home";
 export const Route = createFileRoute("/blog")({
   head: () => ({
     meta: [
-      { title: "Blog — Vedbrands" },
-      { name: "description", content: "Notes on brand, design, and growth from the Vedbrands team." },
+      { title: "Blog — Veda Brands" },
+      { name: "description", content: "Notes on brand, design, and growth from the Veda Brands team." },
       { property: "og:url", content: "/blog" },
     ],
     links: [{ rel: "canonical", href: "/blog" }],

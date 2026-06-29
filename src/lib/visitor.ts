@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
 
-const VISIT_KEY = "vedbrands:visit_logged_at";
+const VISIT_KEY = "veda-brands:visit_logged_at";
 
 /** Logs an anonymous visit at most once per 30 minutes per browser. */
 export function useLogVisit() {
