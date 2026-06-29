@@ -132,7 +132,21 @@ function RootComponent() {
         if (event !== "SIGNED_OUT") queryClient.invalidateQueries();
       }
     });
-    return () => sub.subscription.unsubscribe();
+
+    // "Remember me" off => sign out when the tab/window is hidden away.
+    const onPageHide = () => {
+      try {
+        if (window.localStorage.getItem("veda-brands:ephemeral_session") === "1") {
+          supabase.auth.signOut();
+        }
+      } catch {}
+    };
+    window.addEventListener("pagehide", onPageHide);
+
+    return () => {
+      sub.subscription.unsubscribe();
+      window.removeEventListener("pagehide", onPageHide);
+    };
   }, [queryClient, router]);
 
   return (
